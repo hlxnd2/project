@@ -1,8 +1,11 @@
+import CartComponent from "../components/CartComponent";
+
 export default function Cart()
 {
     return (
-        <main style={{ padding: "1rem 0" }}>
-            <h2>Cart</h2>
+        <main>
+            <h2>Your Shopping Cart</h2>
+            <CartComponent />
         </main>
     );
 }
