@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.13.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "prisma": "^3.13.0"
   }
 }

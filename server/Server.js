@@ -5,7 +5,7 @@ const bodyparser = require('koa-bodyparser');
 const router = require('./api');
 
 class Server {
-  constructor({ port = 3000 } = {}) {
+  constructor({ port = 3030 } = {}) {
     this._port = port;
     this._server = new Koa();
 
