@@ -1,13 +1,13 @@
-import Clothe from "../models/Clothe";
+// import Product from "../models/Product";
 
 export function fetchShow() {
   return fetch('')
     .then(response => response.json())
-    .then(Clothing => Clothing.map(Clothing.create))
+    .then(Product => Product.map(Product.create))
 }
 
 export const data = {
-  clothes: [
+  products: [
     {
       title: 'Shorts',
       category: 'Sport',

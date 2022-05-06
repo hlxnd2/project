@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 //import './App.css';
 //import ClotheList from './components/ClotheList/ClotheList';
@@ -23,11 +23,11 @@ export default function MainPage() {
               </tr>
             </thead>
             <tbody>
-              {data.clothes.map((clothe) => (
-                  <tr key={clothe.id}>
-                    <td>{clothe.title}</td>
-                    <td>{clothe.category}</td>
-                    <td>{clothe.description}</td>
+              {data.products.map((product) => (
+                  <tr key={product.id}>
+                    <td>{product.title}</td>
+                    <td>{product.category}</td>
+                    <td>{product.description}</td>
                   </tr>
                 ))}
             </tbody>
