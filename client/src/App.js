@@ -6,7 +6,7 @@ import ClotheList from './components/ClotheList/ClotheList';
 import { useClothes } from './hooks/useClothes';
 
 //Temp stuff
-import { data } from './data';
+//import { data } from './ApiClient';
 
 export default function App() {
   const [clothes, setClothes] = useState([
@@ -39,9 +39,9 @@ export default function App() {
       <table className='table table-striped table-bordered'>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
