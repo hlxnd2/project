@@ -1,0 +1,16 @@
+[
+    {
+      "id": "1",
+      "title": "Keyboard MX",
+      "description": "A good keyboard for fast typing",
+      "price": 29.99,
+      "currency": "eur"
+    },
+    {
+      "id": "2",
+      "title": "Mouse MX",
+      "description": "The fastest mouse in the world",
+      "price": 19.99,
+      "currency": "eur"
+    }
+  ]
