@@ -31,3 +31,11 @@
     align-content: center;
     gap: 10px;
 }
+
+.cartcomponent .checkout .total
+{
+    border-top-style: solid;
+    border-color: darkslategray;
+    border-width: 3px;
+    font-size: larger;
+}
