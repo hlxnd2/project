@@ -28,7 +28,43 @@ async function createOrder(order) {
   return newOrder;
 }
 
+async function getOrder(orderId) {
+  let order = await prisma.orders.findUnique({ 
+    where: {
+      id: orderId 
+    }
+  });
+  return order;
+}
+
+
+async function updateOrder(orderId, newOrder) {
+  let order = await prisma.orders.findUnique({ 
+    where: {
+      id: orderId 
+    }
+  });
+
+  let orderData = JSON.parse(order.json_content);
+
+  let newOrderData = {
+    ...orderData,
+    ...newOrder
+  };
+
+  let json_content = JSON.stringify(newOrderData);
+
+  let newOrderDB = await prisma.orders.update({
+    where: { id: orderId },
+    data: { json_content },
+  });
+
+  return newOrderDB;
+}
+
 module.exports = {
   getAllProducts,
   createOrder,
+  getOrder,
+  updateOrder
 };

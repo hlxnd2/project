@@ -10,6 +10,7 @@ const router = new Router({
 router
   .get('/products', shopController.getAll)
   .post('/orders', shopController.createOrder)
-  .put('/orders/:orderId');
+  .get('/orders/:orderId', shopController.getOrder)
+  .put('/orders/:orderId', shopController.putOrder);
   
 module.exports = router;

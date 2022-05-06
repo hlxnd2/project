@@ -32,6 +32,33 @@ class ShopController {
       }
     }
   };
+
+  putOrder = async (ctx) => {
+    let order = ctx.request.body;
+    console.log(order);
+
+    try {
+      const newOrder = await shopService.updateOrder(parseInt(ctx.params.orderId),order);
+      ctx.status = 200;
+      ctx.body = newOrder;
+    } catch (error) {
+      console.error(error)
+      ctx.status = 500;
+      ctx.body = { error };
+    }
+  }; 
+  
+  getOrder = async (ctx) => {
+    try {
+      const order = await shopService.getOrder(parseInt(ctx.params.orderId));
+      ctx.status = 200;
+      ctx.body = order;
+    } catch (error) {
+      console.error(error)
+      ctx.status = 500;
+      ctx.body = { error };
+    }
+  }; 
 }
 
 module.exports = ShopController;
