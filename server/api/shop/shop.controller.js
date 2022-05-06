@@ -35,7 +35,6 @@ class ShopController {
 
   putOrder = async (ctx) => {
     let order = ctx.request.body;
-    console.log(order);
 
     try {
       const newOrder = await shopService.updateOrder(parseInt(ctx.params.orderId),order);
