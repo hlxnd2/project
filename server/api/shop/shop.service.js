@@ -1,19 +1,31 @@
-const fs = require('fs');
-const path = require('path');
+const { PrismaClient } = require('@prisma/client')
 
-const dataPath = path.join(__dirname, './data.json');
+const prisma = new PrismaClient()
 
-function getAllProducts() {
-  const data = fs.readFileSync(dataPath, 'utf-8');
+async function getAllProducts() {
 
-  return JSON.parse(data);
+  const data = await prisma.products.findMany();
+
+  return data.map(e => {
+    return {
+      ...e,
+      size: 'M',
+      color: 'Orange',
+      img_src : e.image
+    };
+  });
 }
 
-function createOrder(order) {
-  // const shop = getAllMessages();
-  // shop.push(message);
-  // fs.writeFileSync(dataPath, JSON.stringify(shop));
-  return order;
+async function createOrder(order) {
+  if (!('products' in order && 'total' in order && 'discount' in order)) {
+    throw ({ errorCode: 401, errorMessage: 'Error in POST request...' });
+  }
+
+  let newOrder = await prisma.orders.create({data: {
+    json_content: JSON.stringify(order)}
+  });
+
+  return newOrder;
 }
 
 module.exports = {
