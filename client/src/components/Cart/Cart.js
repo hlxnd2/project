@@ -1,8 +1,8 @@
-import { LoadingSpinner } from './LoadingSpinner/LoadingSpinner.js'
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner.js'
 
-import './CartComponent.css';
+import './Cart.css';
 
-export default function CartComponent ()
+export default function Cart ()
 {
     const formatter = new Intl.NumberFormat(undefined, {style: 'currency', currency: 'EUR'});
     const subtotal = 70;
@@ -10,7 +10,7 @@ export default function CartComponent ()
     const tax = 5;
 
     return (
-        <div className="cartcomponent">
+        <div className="cart">
             <section className="itemlist">
                 <LoadingSpinner />
             </section>

@@ -1,4 +1,4 @@
-.cartcomponent
+.cart
 {
     width: fit-content;
     margin: 0 auto;
@@ -15,14 +15,14 @@
     border-width: 3px;
 }
 
-.cartcomponent .itemlist
+.cart .itemlist
 {
     border-right-style: solid;
     border-color: darkslategray;
     border-width: 3px;
 }
 
-.cartcomponent .checkout
+.cart .checkout
 {
     margin: 1em;
     display: flex;
@@ -33,7 +33,7 @@
     gap: 10px;
 }
 
-.cartcomponent .checkout .total
+.cart .checkout .total
 {
     border-top-style: solid;
     border-color: darkslategray;
