@@ -20,11 +20,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Wonderful Shop</h1>
+        <nav>
+          <Link to="/"><h1><img className="carticon" src="/logo.svg" alt="" /> Wonderful Shop</h1></Link>
+          <Link to="/cart"><img className="carticon" src="/cart.svg" alt="Cart" /></Link>
+        </nav>
       </header>
-      <nav>
-        <Link to="/cart">Check your cart</Link>
-      </nav>
       <ProductsContext.Provider value={{ toggleProductFav }}>
         <main className="main-container">
           <Outlet />
@@ -38,20 +38,3 @@ function App() {
 }
 
 export default App;
-
-/* export default function App() {
- 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <nav>
-          <Link to="/"><h1><img className="carticon" src="/logo.svg" alt="" /> Wonderful Shop</h1></Link>
-          <Link to="/cart"><img className="carticon" src="/cart.svg" alt="Cart" /></Link>
-        </nav>
-      </header>
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
-} */
