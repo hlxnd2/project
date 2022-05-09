@@ -1,3 +1,5 @@
+import { LoadingSpinner } from './LoadingSpinner/LoadingSpinner.js'
+
 import './CartComponent.css';
 
 export default function CartComponent ()
@@ -10,7 +12,7 @@ export default function CartComponent ()
     return (
         <div className="cartcomponent">
             <section className="itemlist">
-                <p>LIST OF ITEMS</p>
+                <LoadingSpinner />
             </section>
             <section className="checkout">
                 <div className="details">

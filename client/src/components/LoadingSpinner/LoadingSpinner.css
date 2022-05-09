@@ -1,0 +1,30 @@
+.LoadingSpinner
+{
+    margin: 1em;
+    padding: 1em;
+}
+
+.LoadingSpinner .spinner
+{
+    width: 10em;
+}
+
+@media (prefers-reduced-motion: no-preference)
+{
+    .LoadingSpinner .spinner
+    {
+        animation: loading-logo-spin infinite 1s steps(8);
+    }
+}
+
+@keyframes loading-logo-spin
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
