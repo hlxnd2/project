@@ -1,9 +1,9 @@
 import Product from "../models/Product";
 
-export function fetchShow() {
-  return fetch("https://movied.herokuapp.com/discover")
+export function fetchProducts() {
+  return fetch("http://localhost:3030/products")
     .then((response) => response.json())
-    .then((Product) => Product.map(Product.create));
+    .then((products) => products.map(Product.create));
 }
 
 /* export const data = {

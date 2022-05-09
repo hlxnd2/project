@@ -8,7 +8,7 @@ export default class Product {
   
       return new Product({
         ...product,
-        imgSrc,
+        imgSrc: product.img_src,
         isInShoppingCart: false
       });
     }
