@@ -1,12 +1,12 @@
-// import Product from "../models/Product";
+import Product from "../models/Product";
 
 export function fetchShow() {
-  return fetch('')
-    .then(response => response.json())
-    .then(Product => Product.map(Product.create))
+  return fetch("https://movied.herokuapp.com/discover")
+    .then((response) => response.json())
+    .then((Product) => Product.map(Product.create));
 }
 
-export const data = {
+/* export const data = {
   products: [
     {
       title: 'Shorts',
@@ -25,4 +25,4 @@ export const data = {
       img_src: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F2530%2F3930%2Fproducts%2FPink.jpg%3Fv%3D1584446024&imgrefurl=https%3A%2F%2Fcommunityclothing.co.uk%2Fproducts%2Fwomensshortsleevet-shirt-pink&tbnid=QDebqotM_66ufM&vet=12ahUKEwjJ9ebt7Mr3AhXQjqQKHWzYBLIQMygMegUIARDRAg..i&docid=hJz01t5FH2KwbM&w=880&h=880&q=t-shirt%20pink&hl=es&safe=active&ved=2ahUKEwjJ9ebt7Mr3AhXQjqQKHWzYBLIQMygMegUIARDRAg'
     }
   ]
-};
+}; */
