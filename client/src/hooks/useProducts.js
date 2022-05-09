@@ -5,7 +5,8 @@ export function useProducts() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProducts().then((products) => setProducts(products));
+    fetchProducts()
+        .then((products) => setProducts(products));
   }, []);
 
   const toggleProductFav = (id) => {

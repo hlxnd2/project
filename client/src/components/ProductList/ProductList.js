@@ -1,7 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import './ProductList.styles.css'
 
-export default function ProductList({ title, products}) {
+export default function ProductList({ title, products }) {
     return (
         <section className='productlist-section'>
             <h2 className='productlist-title'>{title}</h2>
