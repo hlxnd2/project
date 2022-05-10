@@ -1,0 +1,22 @@
+.productCard {
+    position: relative;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .productCard-footer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .productCard-title {
+    color: hsl(20deg, 0%, 0%)
+  }
+  
+  .productCard-add {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }

@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../data/data.db"
+}
+
+model orders {
+  id           Int    @id @default(autoincrement())
+  json_content String
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model products {
+  id           Int  @id @default(autoincrement())
+  title        String?
+  price        String?
+  description  String?
+  category     String?
+  image        String?
+  rating_rate  String? @map("rating/rate")
+  rating_count String? @map("rating/count")
+}
