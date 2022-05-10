@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 import "../../src/App.css";
 import ProductList from "../components/ProductList/ProductList";
