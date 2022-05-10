@@ -1,12 +1,18 @@
-import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner.js'
+import { useContext } from "react";
+
+import GlobalContext from "../../GlobalContext";
+import ProductList from "../ProductList/ProductList";
 
 import './Cart.css';
 
 export default function Cart (props)
 {
+    const { products, toggle } = useContext(GlobalContext);
     const formatter = new Intl.NumberFormat(undefined, {style: 'currency', currency: 'EUR'});
-    const subtotal = 70;
-    const shipping = 9;
+    const productsInCart = products.filter((p) => p.isInShoppingCart);
+
+    const subtotal = productsInCart.reduce(((acc, p) => acc + parseInt(p.price, 10)), 0);
+    const shipping = 10;
     const tax = 5;
 
     async function pay()
@@ -38,7 +44,7 @@ export default function Cart (props)
     return (
         <div className="cart">
             <section className="itemlist">
-                <LoadingSpinner />
+                <ProductList title='InCart' products={productsInCart} />
             </section>
             <section className="checkout">
                 <div className="details">

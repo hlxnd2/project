@@ -1,14 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 
 import "../../src/App.css";
 import ProductList from "../components/ProductList/ProductList";
-import { useProducts } from "../hooks/useProducts";
+import GlobalContext from "../GlobalContext";
 
 export default function MainPage() {
-  console.log("render");
-
-  const [products, toggle] = useProducts();
+  const { products, toggle } = useContext(GlobalContext);
 
   return (
     <main style={{ padding: "1rem 0" }}>

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import "./ProductCard.styles.css";
-import { ProductsContext } from "../../App";
+import GlobalContext from "../../GlobalContext";
 
 export default function ProductCard({ id, title, imgSrc, isInShoppingCart }) {
-  const { toggleProductFav } = useContext(ProductsContext);
-  console.log(title);
+  const { products, toggleProductFav } = useContext(GlobalContext);
+
   return (
     <article className="productCard">
       <img width='40px' src={imgSrc} alt={title} />

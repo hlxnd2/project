@@ -11,7 +11,8 @@ export function useProducts() {
 
   const toggleProductFav = (id) => {
     const updatedProducts = products.map((product) => {
-      if (product.id !== id) return product;
+      if (product.id !== id)
+        return product;
 
       return {
         ...product,
