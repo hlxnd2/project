@@ -1,0 +1,23 @@
+.productCard {
+    position: relative;
+  }
+  
+  .productCard-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  .productCard-title {
+    color: hsl(20deg, 100%, 100%)
+  }
+  
+  .productCard-add {
+    background: transparent;
+    border: 1;
+    cursor: pointer;
+  }

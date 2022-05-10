@@ -1,0 +1,16 @@
+.productlist-section {
+    margin-bottom: 16px;
+  }
+  
+  .productlist-title {
+    color: hsl(10deg, 90%, 80%);
+    margin-bottom: 16px;
+  }
+  
+  .productlist-scrollList {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    overflow-y: auto;
+    overflow-x: scroll;
+  }
