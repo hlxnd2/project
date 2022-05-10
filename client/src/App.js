@@ -1,12 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
-import React from "react";
+
 import "./App.css";
 
+import GlobalContext from './GlobalContext'
 import { useProducts } from "./hooks/useProducts";
-
-export const ProductsContext = React.createContext({
-  toggleProductFav: () => {},
-});
 
 function App() {
   const [products, toggleProductFav] = useProducts();
@@ -19,11 +16,11 @@ function App() {
           <Link to="/cart"><img className="carticon" src="/cart.svg" alt="Cart" /></Link>
         </nav>
       </header>
-      <ProductsContext.Provider value={{ toggleProductFav }}>
+      <GlobalContext.Provider value={{ products, toggleProductFav }}>
         <main className="main-container">
           <Outlet />
         </main>
-      </ProductsContext.Provider>
+      </GlobalContext.Provider>
     </div>
   );
 }
