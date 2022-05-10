@@ -57,7 +57,36 @@ class ShopController {
       ctx.status = 500;
       ctx.body = { error };
     }
-  }; 
+  };
+  
+  getOrderProducts = async (ctx) => {
+    try {
+      const order = await shopService.getOrder(parseInt(ctx.params.orderId));
+      console.log(order.json_content)
+      ctx.status = 200;
+      ctx.body = JSON.parse(order.json_content).products;
+    } catch (error) {
+      console.error(error)
+      ctx.status = 500;
+      ctx.body = { error };
+    }
+  };
+
+  addProductToOrderById = async (ctx) => {
+    try {
+      const product = await (await shopService.getAllProducts()).filter(p => p.id == parseInt(ctx.params.productId))[0];
+      const order = await shopService.getOrder(parseInt(ctx.params.orderId));
+      const newContent = JSON.parse(order.json_content);
+      newContent.products.push(product);
+      const newOrder = await shopService.updateOrder(order.id, newContent);
+      ctx.status = 200;
+      ctx.body = newOrder;
+    } catch (error) {
+      console.error(error)
+      ctx.status = 500;
+      ctx.body = { error };
+    }
+  };
 }
 
 module.exports = ShopController;

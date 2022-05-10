@@ -11,6 +11,8 @@ router
   .get('/products', shopController.getAll)
   .post('/orders', shopController.createOrder)
   .get('/orders/:orderId', shopController.getOrder)
+  .get('/orders/:orderId/products', shopController.getOrderProducts)
+  .post('/orders/:orderId/products/:productId', shopController.addProductToOrderById)
   .put('/orders/:orderId', shopController.putOrder);
   
 module.exports = router;
