@@ -1,4 +1,5 @@
 const Koa = require('koa');
+const cors = require('@koa/cors');
 //const serve = require('koa-static');
 const bodyparser = require('koa-bodyparser');
 //const path = require('path');
@@ -14,6 +15,7 @@ class Server {
     this._server
       //.use(serve(clientPath))
       .use(bodyparser())
+      .use(cors())
       .use(router.routes())
       .use(router.allowedMethods());
   }
