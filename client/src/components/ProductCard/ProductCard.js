@@ -4,7 +4,7 @@ import { ProductsContext } from "../../App";
 
 export default function ProductCard({ id, title, imgSrc, isInShoppingCart }) {
   const { toggleProductFav } = useContext(ProductsContext);
-  
+  console.log(title);
   return (
     <article className="productCard">
       <img width='40px' src={imgSrc} alt={title} />
