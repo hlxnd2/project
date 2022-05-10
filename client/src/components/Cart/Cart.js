@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import GlobalContext from "../../GlobalContext";
 import ProductList from "../ProductList/ProductList";
+import { createOrder } from '../../services/ApiClient'
 
 import './Cart.css';
 
@@ -15,30 +16,10 @@ export default function Cart (props)
     const shipping = 10;
     const tax = 5;
 
-    async function pay()
+    function pay()
     {
-        let response;
-        try
-        {
-            response = await fetch('localhost:3030/payOrder', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({id: props.id})
-            });
-        }
-        catch (err)
-        {
-            alert(err);
-            return;
-        }
-
-        if (response.ok)
-            document.location.href = '/';
-        else
-            alert('Error in payment method!');
+        let id;
+        createOrder(productsInCart, subtotal + shipping + tax, 0).then(e => { alert(e.id); });
     }
 
     return (
@@ -56,7 +37,7 @@ export default function Cart (props)
                     <div><label>Estimate Total:</label> <span>{formatter.format(subtotal + shipping + tax)}</span></div>
                 </div>
                 <div className="payment">
-                    <form>
+                    <form onSubmit={e => e.preventDefault()}>
                         <button onClick={pay}>Pay</button>
                     </form>
                 </div>

@@ -13,7 +13,7 @@ export default function ProductCard({ id, title, imgSrc, isInShoppingCart }) {
         <button
           className="productCard-add"
           onClick={() => toggleProductFav(id)}
-        >Add to cart
+        >{isInShoppingCart ? ("Remove from cart") : ("Add to cart")}
         </button>
       </div>
     </article>
