@@ -15,7 +15,7 @@ export default function MainPage() {
       <h2>MAIN PAGE</h2>
       <div className="container">
         <h3 className="p-3 text-center">React - Display a list of items</h3>
-        <ProductList title='Prods' products={products} />
+        <ProductList title='Products' products={products} />
       </div>
     </main>
   );
